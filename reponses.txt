@@ -1,0 +1,57 @@
+
+(1)
+La commande `git status` permet de connaître l'état actuel du projet. Elle liste les fichiers modifiés ajoutés non suivis et ceux prêts à être commit Dans mon cas elle a indiqué que `README.md` était non suivi (untracked file), car il venait d’être créé.
+
+(2)
+Après l'ajout avec `git add .`, `git status` indique désormais que `README.md` est prêt à être commit. Il apparaît en vert, ce qui signifie qu’il est passé dans la staging area.
+
+(3)
+La commande `git add .` a déplacé les fichiers modifiés dans l’espace d’indexation (staging area). C’est un espace intermédiaire avant qu’un commit les intègre dans l’historique du projet.
+
+(4)
+J’ai réalisé mon premier commit avec :  
+`git commit -m "Premier commit : ajout du README et du fichier de réponses"`  
+Cette commande a enregistré l’état actuel de la staging area dans l’historique Git.
+
+(5)
+J’ai utilisé la commande `git log` pour consulter les commits. Elle affiche l’identifiant du commit l’auteur  la date et le message de commit.
+
+(6)
+La commande `git diff` compare le répertoire de travail avec la staging area et elle montre les modifications non encore indexées.  
+La commande `git diff --staged` compare la staging area avec le dernier commitet lle montre ce qui est prêt à être commit.
+
+(7)
+- `git status` : montre les fichiers modifiés, non suivis, en attente de commit.
+- `git diff` : montre les différences entre le répertoire de travail et la staging area.
+- `git diff --staged` : montre les différences entre la staging area et le dernier commit.
+- `git log` : liste les commits précédents.
+- `git show <hash>` : affiche le détail complet d’un commit avec les modifications incluses.
+
+(8)
+Après avoir créé `fichier1.txt` et `brouillon.txt`, la commande `git add .` a ajouté les deux dans la staging area. `git status` les montrait tous les deux comme prêts à être commit.
+
+(9)
+La commande `git reset brouillon.txt` a retiré ce fichier de la staging area sans le supprimer il redevient un fichier modifié mais non indexé seul `fichier1.txt` reste prêt à être commit.
+
+(10)
+Pour vérifier que `brouillon.txt` n’a pas été commit j’utilise `git show` ou `git log -p` après le commit il devrait afficher que les modifications de `fichier1.txt`.
+
+(11)
+J’ai vérifié mes commits avec `git log` l’état avec `git status`, les fichiers prêts à être envoyés avec `git diff --staged`.
+
+(12)
+Après le `git push origin develop`, j’ai utilisé GitHub directement pour vérifier que les commits étaient bien visibles sur l’interface on peut aussi utiliser `git log` après un `git fetch origin`.
+
+(13)
+Pour cloner le projet, j’ai utilisé :  
+`git clone https://github.com/PaulineLam24/TP-Git.git`
+
+(14)
+Dans le dépôt cloné, j’ai trouvé le fichier `README.md`. J’ai listé les commits avec `git log --oneline` :
+- Initialisation du projet
+- Ajout d’informations dans le README
+
+(15)
+Pour voir les différences entre les commits, j’ai utilisé :  
+`git diff <commit1> <commit2>`  
+Cela m’a permis de voir quelles lignes avaient été ajoutées dans le fichier README.md entre les deux versions.
